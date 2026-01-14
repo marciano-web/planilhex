@@ -15,8 +15,11 @@ from app.config import settings
 config = context.config
 fileConfig(config.config_file_name)
 
+from app.config import get_settings
+
 def get_url():
-    return settings.database_url
+    return get_settings().DATABASE_URL
+
 
 target_metadata = Base.metadata
 
